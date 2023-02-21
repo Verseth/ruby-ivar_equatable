@@ -8,6 +8,7 @@ class IvarEquatableTest < ::Minitest::Test
     # defines methods based on given
     # keyword arguments
     def initialize(**kwargs)
+      super()
       kwargs.each do |key, val|
         instance_variable_set(:"@#{key}", val)
         define_singleton_method(key) do
@@ -35,7 +36,7 @@ class IvarEquatableTest < ::Minitest::Test
         array_attr: [
           TestObject.new(eluwina: 3)
         ]
-      },
+      }
     )
   end
 
@@ -49,7 +50,7 @@ class IvarEquatableTest < ::Minitest::Test
         array_attr: [
           TestObject.new(eluwina: 3)
         ]
-      },
+      }
     )
     assert_equal other, @obj
     assert_equal @obj, other
@@ -61,7 +62,7 @@ class IvarEquatableTest < ::Minitest::Test
         array_attr: [
           TestObject.new(siema: 3)
         ]
-      },
+      }
     )
     assert other != @obj
     assert @obj != other
@@ -73,7 +74,7 @@ class IvarEquatableTest < ::Minitest::Test
         array_attr: [
           TestObject.new(eluwina: 3)
         ]
-      },
+      }
     )
     assert other.eql?(@obj)
     assert @obj.eql?(other)
@@ -85,7 +86,7 @@ class IvarEquatableTest < ::Minitest::Test
         array_attr: [
           TestObject.new(siema: 3)
         ]
-      },
+      }
     )
     assert !other.eql?(@obj)
     assert !@obj.eql?(other)
@@ -97,7 +98,7 @@ class IvarEquatableTest < ::Minitest::Test
         array_attr: [
           TestObject.new(eluwina: 3)
         ]
-      },
+      }
     )
     assert !other.eql?(@obj)
     assert !@obj.eql?(other)
@@ -109,7 +110,7 @@ class IvarEquatableTest < ::Minitest::Test
         array_attr: [
           TestObject.new(eluwina: 3)
         ]
-      },
+      }
     )
     assert other.eql?(@obj)
     assert @obj.eql?(other)
