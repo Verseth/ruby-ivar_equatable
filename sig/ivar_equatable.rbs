@@ -1,4 +1,7 @@
 module IvarEquatable
   VERSION: String
   # See the writing guide of rbs: https://github.com/ruby/rbs#guides
+
+  def eql?: (Object) -> bool
+  alias == eql?
 end
